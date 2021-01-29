@@ -12,7 +12,7 @@ There was originally a [Markdown Extra WordPress Plugin released by Michel Forti
 
 ## Updated functionality in PHP Markdown
 
-For years I used the old version of Markdown Extra WordPress plugin. It still worked brilliantly. However, two improvements to PHP Markdown compelled the creation of a new WordPress plugin: the ability to add `{rel="nofollow"}` after an href, and the elimination of extra `<p></p>`s inadvertently added to certain markup. Using the latest PHP Markdown, all we needed was an updated wrapper so that it could work as a WordPress plugin.
+For years I used the old version of Markdown Extra WordPress plugin. It still worked brilliantly. However, two improvements to PHP Markdown compelled the creation of a new WordPress plugin: the ability to add `{rel="nofollow"}` after an href, and the elimination of extra `<p></p>` inadvertently added to certain markup. Using the latest PHP Markdown parser, all we need is an updated wrapper and some WordPress specific commands, so that it works as a WordPress plugin.
 
 ## Markdown Extra extended syntax
 
