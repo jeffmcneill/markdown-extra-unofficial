@@ -19,11 +19,6 @@ Install from within the WordPress plugins control panel. Either upload the zip f
 
 Once enabled it will parse all pages and posts, excerpts, category and tag descriptions, and WooCommerce short descriptions. 
 
-== Frequently Asked Questions ==
-= How can I contact you? =
-
-You can email us at <jeff@mcneill.io>
-
 == Changelog ==
 = 1.0.1 =
 Release date: 30 January 2021
