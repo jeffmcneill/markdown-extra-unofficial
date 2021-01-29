@@ -1,14 +1,43 @@
 <?php
 /**
  * Plugin Name: Markdown Extra Unofficial
+ * Plugin URI: https://jeffmcneill.com/markdown-extra
  * Description:
- * Version: 1.0
- * Author:
- * Author URI:
- * License: GPL v3
- * Requires at least: 4.6
- * Requires PHP: 5.3.7
+ * Version: 1.0.1
+ * Author: 
+ * Author URI: 
+ * License: GPLv3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html
+ * Requires at least: 5.2
+ * Requires PHP: 5.6
  *
+ * Copyright (c) 2021 Jeff Mcneill <https://jeffmcneill.com/markdown-extra>
+ * All rights reserved.
+ * 
+ * Based on PHP Markdown Lib
+ * Copyright (c) 2004-2021 Michel Fortin <https://michelf.ca/>
+ * All rights reserved.
+ * 
+ * Based on Markdown
+ * Copyright (c) 2003-2006 John Gruber
+ * <https://daringfireball.net/>
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are 
+ * met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, 
+ * this list of conditions and the following disclaimer.
+ * 
+ * Redistributions in binary form must reproduce the above copyright notice, 
+ * this list of conditions and the following disclaimer in the documentation 
+ * and/or other materials provided with the distribution.
+ * 
+ * Neither the name "Markdown" nor the names of its contributors may be 
+ * used to endorse or promote products derived from this software without 
+ * specific prior written permission.
+ * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -44,7 +73,7 @@ require_once __DIR__ . '/Michelf/MarkdownExtra.php';
 /**
  *
  */
-class WP_Markdown_Extra {
+class Markdown_Extra {
 
 	/**
 	 * @var array
@@ -206,4 +235,4 @@ class WP_Markdown_Extra {
 	}
 }
 
-$GLOBALS['wp_markdown_extra'] = new WP_Markdown_Extra();
+$GLOBALS['markdown_extra'] = new Markdown_Extra();
