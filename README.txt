@@ -1,5 +1,5 @@
 === Markdown Extra Unofficial ===
-Contributors: jeffmcneill, sasatodorovic
+Contributors: jeffmcneill, stodorovic
 Tags: markdown, markdown-extra, markdown-parser, parser
 Donate link: https://paypal.me/punmcneill
 Requires at least: 5.2
