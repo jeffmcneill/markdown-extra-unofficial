@@ -1,43 +1,50 @@
 <?php
 /**
+ * Markdown Extra Unofficial Plugin.
+ *
+ * @package   Markdown_Extra
+ * @copyright Copyright (c) 2021 Jeff Mcneill <https://jeffmcneill.com/markdown-extra>
+ * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License, version 3 or higher
+ *
+ * @wordpress-plugin
  * Plugin Name: Markdown Extra Unofficial
- * Plugin URI: https://jeffmcneill.com/markdown-extra
+ * Plugin URI:  https://jeffmcneill.com/markdown-extra
  * Description:
- * Version: 1.0.1
- * Author: 
- * Author URI: 
- * License: GPLv3
+ * Version:     1.0.1
+ * Author:      Jeff Mcneill
+ * Author URI:
+ * License:     GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  * Requires at least: 5.2
- * Requires PHP: 5.6
+ * Requires PHP: 5.6.20
  *
  * Copyright (c) 2021 Jeff Mcneill <https://jeffmcneill.com/markdown-extra>
  * All rights reserved.
- * 
+ *
  * Based on PHP Markdown Lib
  * Copyright (c) 2004-2021 Michel Fortin <https://michelf.ca/>
  * All rights reserved.
- * 
+ *
  * Based on Markdown
  * Copyright (c) 2003-2006 John Gruber
  * <https://daringfireball.net/>
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are 
+ * modification, are permitted provided that the following conditions are
  * met:
- * 
- * Redistributions of source code must retain the above copyright notice, 
+ *
+ * Redistributions of source code must retain the above copyright notice,
  * this list of conditions and the following disclaimer.
- * 
- * Redistributions in binary form must reproduce the above copyright notice, 
- * this list of conditions and the following disclaimer in the documentation 
+ *
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
  * and/or other materials provided with the distribution.
- * 
- * Neither the name "Markdown" nor the names of its contributors may be 
- * used to endorse or promote products derived from this software without 
+ *
+ * Neither the name "Markdown" nor the names of its contributors may be
+ * used to endorse or promote products derived from this software without
  * specific prior written permission.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -71,27 +78,33 @@ require_once __DIR__ . '/Michelf/Markdown.php';
 require_once __DIR__ . '/Michelf/MarkdownExtra.php';
 
 /**
- *
+ * Class Markdown_Extra
  */
 class Markdown_Extra {
 
 	/**
+	 * Holds "hidden tags".
+	 *
 	 * @var array
 	 */
 	private $hidden_tags;
 
 	/**
+	 * Holds "place holders".
+	 *
 	 * @var array
 	 */
 	private $placeholders;
 
 	/**
+	 * Holds MarkdownExtra instance.
+	 *
 	 * @var object
 	 */
 	private $parser;
 
 	/**
-	 *
+	 * Class constructor.
 	 */
 	public function __construct() {
 		register_activation_hook( __FILE__, array( __CLASS__, 'activate' ) );
@@ -106,7 +119,7 @@ class Markdown_Extra {
 
 		$this->placeholders = explode(
 			' ',
-			 // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_str_rot13
+			// phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_str_rot13
 			str_rot13(
 				'pEj07ZbbBZ U1kqgh4w4p pre2zmeN6K QTi31t9pre ol0MP1jzJR ' .
 				'ML5IjmbRol ulANi1NsGY J7zRLJqPul liA8ctl16T K9nhooUHli'
@@ -117,19 +130,23 @@ class Markdown_Extra {
 	}
 
 	/**
+	 * Run single site / network-wide activation of the plugin.
 	 *
+	 * @param bool $networkwide Whether the plugin is being activated network-wide.
 	 */
-	public static function activate() {
+	public static function activate( $networkwide = false ) {
 	}
 
 	/**
+	 * Run single site / network-wide de-activation of the plugin.
 	 *
+	 * @param bool $networkwide Whether the plugin is being de-activated network-wide.
 	 */
-	public static function deactivate() {
+	public static function deactivate( $networkwide = false ) {
 	}
 
 	/**
-	 *
+	 * Init.
 	 */
 	public function init() {
 		if ( defined( 'MARKDOWN_WP_POSTS' ) ) {
@@ -203,6 +220,8 @@ class Markdown_Extra {
 
 	/**
 	 * Add a footnote id prefix to posts when inside a loop.
+	 *
+	 * @param string $text The text to filter.
 	 */
 	public function markdown_post( $text ) {
 
@@ -216,7 +235,9 @@ class Markdown_Extra {
 	}
 
 	/**
+	 * Add <p> tags.
 	 *
+	 * @param string $text The text to filter.
 	 */
 	public function add_p( $text ) {
 		if ( ! preg_match( '{^$|^<(p|ul|ol|dl|pre|blockquote)>}i', $text ) ) {
@@ -228,21 +249,27 @@ class Markdown_Extra {
 	}
 
 	/**
+	 * Strip <p> tags.
 	 *
+	 * @param string $text The text to filter.
 	 */
 	public function strip_p( $text ) {
 		return preg_replace( '{</?p>}i', '', $text );
 	}
 
 	/**
+	 * "Hide" tags.
 	 *
+	 * @param string $text The text to filter.
 	 */
 	public function hide_tags( $text ) {
 		return str_replace( $this->hidden_tags, $this->placeholders, $text );
 	}
 
 	/**
+	 * "Unhide" tags.
 	 *
+	 * @param string $text The text to filter.
 	 */
 	public function show_tags( $text ) {
 		return str_replace( $this->placeholders, $this->hidden_tags, $text );
