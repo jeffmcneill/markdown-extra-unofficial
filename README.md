@@ -1,6 +1,6 @@
 # Markdown Extra Unofficial WordPress Plugin
 
-![Markdown Extra Unofficial](https://github.com/jeffmcneill/markdown-extra/blob/main/markdown-extra.png)
+![Markdown Extra Unofficial](https://github.com/jeffmcneill/markdown-extra-unofficial/blob/main/markdown-extra-unofficial.png)
 
 Markdown Extra Unofficial is a WordPress plugin supporting [Markdown Extra](https://michelf.ca/projects/php-markdown/extra/) the parser by Michel Fortin. There are several [markdown plugins for WordPress](https://wordpress.org/plugins/tags/markdown/), however most require that markdown be put in a block or a shortcode. This plugin is meant to be used with the [Classic Editor](https://wordpress.org/plugins/classic-editor/) and parse all text in pages and posts, excerpts, term descriptions, and WooCommerce short descriptions.
 
@@ -30,4 +30,4 @@ See full [Markdown Extra syntax](https://michelf.ca/projects/php-markdown/extra/
 
 ## Download Markdown Extra Unofficial
 
-Markdown Extra Unofficial is available via [Github](https://github.com/jeffmcneill/markdown-extra/releases) and eventually via Wordpress.org plugins[]().
+Markdown Extra Unofficial is available via [Github](https://github.com/jeffmcneill/markdown-extra-unofficial/releases) and eventually via Wordpress.org plugins[]().
