@@ -1,4 +1,4 @@
-# Markdown Extra Unofficial WordPress Plugin
+# Markdown Extra Unofficial WordPress Plugin 
 
 ![Markdown Extra Unofficial](https://github.com/jeffmcneill/markdown-extra-unofficial/blob/main/markdown-extra-unofficial.png)
 
