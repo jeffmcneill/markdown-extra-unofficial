@@ -1,3 +1,7 @@
+**Updated 2024-08-09**
+
+- Copied repository over to [Codeberg which is now the primary source for Markdown Extra Unofficial](https://codeberg.org/jeffmcneill/markdown-extra-unofficial). This Github repository is only for historical purposes.
+
 # Markdown Extra Unofficial WordPress Plugin 
 
 ![Markdown Extra Unofficial](https://github.com/jeffmcneill/markdown-extra-unofficial/blob/main/markdown-extra-unofficial.png)
