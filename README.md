@@ -34,4 +34,4 @@ See full [Markdown Extra syntax](https://michelf.ca/projects/php-markdown/extra/
 
 ## Download Markdown Extra Unofficial
 
-Markdown Extra Unofficial is available via [Github](https://github.com/jeffmcneill/markdown-extra-unofficial/releases) and eventually via Wordpress.org plugins[]().
+Markdown Extra Unofficial is available via [Codeberg](https://codeberg.org/jeffmcneill/markdown-extra-unofficial/releases).
